@@ -212,9 +212,6 @@
   .z-50 {
     z-index: 50;
   }
-  .z-100 {
-    z-index: 100;
-  }
   .m-auto {
     margin: auto;
   }
@@ -332,9 +329,6 @@
   .w-full {
     width: 100%;
   }
-  .w-screen {
-    width: 100vw;
-  }
   .flex-1 {
     flex: 1;
   }
@@ -354,9 +348,6 @@
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
-  }
-  .zoom-100 {
-    zoom: 100%;
   }
   .cursor-pointer {
     cursor: pointer;
@@ -397,14 +388,8 @@
   .gap-4 {
     gap: calc(var(--spacing) * 4);
   }
-  .gap-4\.5 {
-    gap: calc(var(--spacing) * 4.5);
-  }
   .gap-5 {
     gap: calc(var(--spacing) * 5);
-  }
-  .gap-5\.25 {
-    gap: calc(var(--spacing) * 5.25);
   }
   .gap-6 {
     gap: calc(var(--spacing) * 6);
@@ -475,6 +460,9 @@
   }
   .bg-\[\#FFA62B\] {
     background-color: #FFA62B;
+  }
+  .bg-black {
+    background-color: var(--color-black);
   }
   .bg-transparent {
     background-color: transparent;
@@ -672,11 +660,6 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
-  .transition-all {
-    transition-property: all;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
   .duration-300 {
     --tw-duration: 300ms;
     transition-duration: 300ms;
@@ -708,9 +691,9 @@
       outline-style: none;
     }
   }
-  .sm\:text-\[\#252B42\] {
+  .sm\:px-10 {
     @media (width >= 40rem) {
-      color: #252B42;
+      padding-inline: calc(var(--spacing) * 10);
     }
   }
   .lg\:relative {
@@ -751,11 +734,6 @@
   .lg\:ml-4 {
     @media (width >= 64rem) {
       margin-left: calc(var(--spacing) * 4);
-    }
-  }
-  .lg\:ml-4\.5 {
-    @media (width >= 64rem) {
-      margin-left: calc(var(--spacing) * 4.5);
     }
   }
   .lg\:block {
@@ -879,6 +857,11 @@
   .lg\:bg-white {
     @media (width >= 64rem) {
       background-color: var(--color-white);
+    }
+  }
+  .lg\:px-0 {
+    @media (width >= 64rem) {
+      padding-inline: calc(var(--spacing) * 0);
     }
   }
   .lg\:px-48\.75 {
