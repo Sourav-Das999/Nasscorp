@@ -25,7 +25,7 @@
       <!-- ---------------------------navbar---------------------------------------------- -->
 
       <nav
-        class="lg:bg-black/50 bg-white flex justify-between lg:justify-around px-6 py-5 fixed top-0 left-0 z-50 w-full items-center"
+        class="lg:bg-black/50 bg-white flex justify-between lg:justify-around px-6 sm:px-10 py-5 fixed top-0 left-0 z-50 w-full items-center"
       >
         <!-- Logo -->
         <div class="logo">
@@ -35,7 +35,7 @@
         </div>
 
         <!-- Desktop Nav Links & Icons -->
-        <div class="navbar text-white flex gap-5 items-center font-semibold z-100">
+        <div class="navbar text-white flex gap-5 items-center font-semibold">
           <a
             href="#home"
             class="transition duration-300 hover:text-amber-300 hidden lg:block"
@@ -73,22 +73,22 @@
             /></a>
           </div>
 
-          <!-- Mobile Icons & Menu Toggle Button -->
+          <!-- Mobile Icons & Toggle Button -->
           <div class="icon lg:hidden flex gap-4 items-center font-semibold">
             <a href="#"><img src="./image/icon-sm-1.svg" alt="icon" /></a>
             <a href="#"><img src="./image/icon-sm-2.svg" alt="icon" /></a>
 
-            <!-- 3 Dot / Menu Button (Click Event Added) -->
+            <!-- 3-Dot Icon Button -->
             <button id="menu-btn" class="focus:outline-none cursor-pointer">
               <img src="./image/icon-sm-3.svg" alt="menu icon" />
             </button>
           </div>
         </div>
 
-        <!-- Mobile Dropdown Menu (By default hidden) -->
+        <!-- Mobile Menu Dropdown -->
         <div
           id="mobile-menu"
-          class="hidden absolute top-full left-0 w-full bg-white lg:hidden flex-col items-center py-6 gap-4 text-[#252B42] font-semibold shadow-md transition-all z-100"
+          class="hidden absolute top-full left-0 w-full bg-white lg:hidden flex-col items-center py-6 gap-4 text-[#252B42] font-semibold shadow-md"
         >
           <a href="#home" class="nav-link hover:text-amber-500">Home</a>
           <a href="#features-9" class="nav-link hover:text-amber-500"
