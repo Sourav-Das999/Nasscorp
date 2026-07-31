@@ -25,75 +25,84 @@
       <!-- ---------------------------navbar---------------------------------------------- -->
 
       <nav
-        class="lg:bg-black/50 bg-white flex justify-around py-5 fixed top-0 left-0 z-100 w-screen"
+        class="lg:bg-black/50 bg-white flex justify-between lg:justify-around px-6 py-5 fixed top-0 left-0 z-50 w-full items-center"
       >
+        <!-- Logo -->
         <div class="logo">
-          <h1 class="text-[24px] font-bold lg:text-white sm:text-[#252B42]">
+          <h1 class="text-[24px] font-bold lg:text-white text-[#252B42]">
             Nasscorp
           </h1>
         </div>
-        <div class="navbar text-white flex gap-5.25 items-center font-semibold">
+
+        <!-- Desktop Nav Links & Icons -->
+        <div class="navbar text-white flex gap-5 items-center font-semibold z-100">
           <a
             href="#home"
-            class="transition duration-300 hover:text hidden lg:block"
+            class="transition duration-300 hover:text-amber-300 hidden lg:block"
             >Home</a
           >
-          <a href="#features-9" class="transition duration-300 hover:text hidden lg:block"
+          <a
+            href="#features-9"
+            class="transition duration-300 hover:text-amber-300 hidden lg:block"
             >Product</a
           >
-          <a href="#about" class="transition duration-300 hover:text hidden lg:block"
+          <a
+            href="#about"
+            class="transition duration-300 hover:text-amber-300 hidden lg:block"
             >About</a
           >
           <a
             href="#contact"
-            class="transition duration-300 hover:text hidden lg:block"
+            class="transition duration-300 hover:text-amber-300 hidden lg:block"
             >Contact</a
           >
-          <div class="icon hidden lg:flex gap-4.5 lg:ml-4.5 font-semibold">
-            <a href="#">
-              <img
+
+          <!-- Desktop Icons -->
+          <div class="icon hidden lg:flex gap-4 lg:ml-4 font-semibold">
+            <a href="#"
+              ><img
                 src="./image/search-icon.svg"
                 alt="icon"
-                class="transition duration-300 hover:text"
-              />
-            </a>
-            <a href="#">
-              <img
-                class="transition duration-300 hover:text-amber-300"
+                class="transition duration-300 hover:opacity-80"
+            /></a>
+            <a href="#"
+              ><img
                 src="./image/shop-icon.svg"
                 alt="icon"
-              />
-            </a>
+                class="transition duration-300 hover:opacity-80"
+            /></a>
           </div>
-          <div class="icon lg:hidden flex gap-4.5 font-semibold">
-            <a href="#">
-              <img
-                src="./image/icon-sm-1.svg"
-                alt="icon"
-                class="transition duration-300 hover:text"
-              />
-            </a>
-            <a href="#">
-              <img
-                class="transition duration-300 hover:text-amber-300"
-                src="./image/icon-sm-2.svg"
-                alt="icon"
-              />
-            </a>
-            <a href="#">
-              <img
-                class="transition duration-300 hover:text-amber-300"
-                src="./image/icon-sm-3.svg"
-                alt="icon"
-              />
-            </a>
+
+          <!-- Mobile Icons & Menu Toggle Button -->
+          <div class="icon lg:hidden flex gap-4 items-center font-semibold">
+            <a href="#"><img src="./image/icon-sm-1.svg" alt="icon" /></a>
+            <a href="#"><img src="./image/icon-sm-2.svg" alt="icon" /></a>
+
+            <!-- 3 Dot / Menu Button (Click Event Added) -->
+            <button id="menu-btn" class="focus:outline-none cursor-pointer">
+              <img src="./image/icon-sm-3.svg" alt="menu icon" />
+            </button>
           </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu (By default hidden) -->
+        <div
+          id="mobile-menu"
+          class="hidden absolute top-full left-0 w-full bg-white lg:hidden flex-col items-center py-6 gap-4 text-[#252B42] font-semibold shadow-md transition-all z-100"
+        >
+          <a href="#home" class="nav-link hover:text-amber-500">Home</a>
+          <a href="#features-9" class="nav-link hover:text-amber-500"
+            >Product</a
+          >
+          <a href="#about" class="nav-link hover:text-amber-500">About</a>
+          <a href="#contact" class="nav-link hover:text-amber-500">Contact</a>
         </div>
       </nav>
 
       <!-- ---------------------------------------------navbar end------------------------------------------- -->
 
-      <div id="product"
+      <div
+        id="product"
         class="w-auto mx-auto lg:pt-30 pt-40 lg:pl-16.5 flex flex-col gap-10"
       >
         <h1
@@ -121,7 +130,7 @@
         </div>
       </div>
       <div
-        class="home-2 flex lg:flex-row lg:pt-0 pt-50 z-50 flex-col absolute lg:gap-30 gap-7.5 lg:bg-white bg-transparent lg:shadow-[-20px_10px_12px_rgba(0,0,0,0.2)] lg:top-[95%] top-[60%] left-1/2 -translate-x-1/2 lg:pr-22 z-10"
+        class="home-2 flex lg:flex-row lg:pt-0 pt-50 z-10 flex-col absolute lg:gap-30 gap-7.5 lg:bg-white bg-transparent lg:shadow-[-20px_10px_12px_rgba(0,0,0,0.2)] lg:top-[95%] top-[60%] left-1/2 -translate-x-1/2 lg:pr-22 z-10"
       >
         <div class="p-5 flex gap-3.5 bg-white w-60">
           <img src="./image/icon-1.svg" alt="icon" />
@@ -230,7 +239,8 @@
 
     <!-- ----------------------------------------about---------------------------------------------- -->
 
-    <section id="about"
+    <section
+      id="about"
       class="flex flex-col bg-[#FAFAFA] h-screen items-center justify-center gap-7.5 w-full text-center lg:mt-0 mt-40"
     >
       <div class="about-1">
@@ -670,5 +680,23 @@
         </p>
       </div>
     </footer>
+
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("flex");
+      });
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          mobileMenu.classList.remove("flex");
+        });
+      });
+    </script>
   </body>
 </html>

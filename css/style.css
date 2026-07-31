@@ -8,6 +8,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-amber-300: oklch(87.9% 0.169 91.605);
+    --color-amber-500: oklch(76.9% 0.188 70.08);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -190,6 +191,9 @@
   .top-\[60\%\] {
     top: 60%;
   }
+  .top-full {
+    top: 100%;
+  }
   .-left-12 {
     left: calc(var(--spacing) * -12);
   }
@@ -274,9 +278,6 @@
   .mt-60 {
     margin-top: calc(var(--spacing) * 60);
   }
-  .mt-80 {
-    margin-top: calc(var(--spacing) * 80);
-  }
   .ml-4 {
     margin-left: calc(var(--spacing) * 4);
   }
@@ -354,6 +355,9 @@
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
+  .zoom-100 {
+    zoom: 100%;
+  }
   .cursor-pointer {
     cursor: pointer;
   }
@@ -423,12 +427,6 @@
   .gap-13\.75 {
     gap: calc(var(--spacing) * 13.75);
   }
-  .gap-70 {
-    gap: calc(var(--spacing) * 70);
-  }
-  .gap-70\.5 {
-    gap: calc(var(--spacing) * 70.5);
-  }
   .scroll-smooth {
     scroll-behavior: smooth;
   }
@@ -457,33 +455,6 @@
   .border-white {
     border-color: var(--color-white);
   }
-  .bg-\[\#0c71cf\] {
-    background-color: #0c71cf;
-  }
-  .bg-\[\#00A0C1\] {
-    background-color: #00A0C1;
-  }
-  .bg-\[\#3a3f41\] {
-    background-color: #3a3f41;
-  }
-  .bg-\[\#4e5b61\] {
-    background-color: #4e5b61;
-  }
-  .bg-\[\#6e7274\] {
-    background-color: #6e7274;
-  }
-  .bg-\[\#73aaac\] {
-    background-color: #73aaac;
-  }
-  .bg-\[\#94aebb\] {
-    background-color: #94aebb;
-  }
-  .bg-\[\#96a9b3\] {
-    background-color: #96a9b3;
-  }
-  .bg-\[\#131b49\] {
-    background-color: #131b49;
-  }
   .bg-\[\#252B42\] {
     background-color: #252B42;
   }
@@ -492,9 +463,6 @@
   }
   .bg-\[\#16697A\] {
     background-color: #16697A;
-  }
-  .bg-\[\#394068\] {
-    background-color: #394068;
   }
   .bg-\[\#396862\] {
     background-color: #396862;
@@ -507,12 +475,6 @@
   }
   .bg-\[\#FFA62B\] {
     background-color: #FFA62B;
-  }
-  .bg-\[rgb\(58\,63\,65\)\] {
-    background-color: rgb(58,63,65);
-  }
-  .bg-black {
-    background-color: var(--color-black);
   }
   .bg-transparent {
     background-color: transparent;
@@ -534,6 +496,9 @@
   }
   .px-4\.5 {
     padding-inline: calc(var(--spacing) * 4.5);
+  }
+  .px-6 {
+    padding-inline: calc(var(--spacing) * 6);
   }
   .px-7 {
     padding-inline: calc(var(--spacing) * 7);
@@ -601,20 +566,11 @@
   .py-10 {
     padding-block: calc(var(--spacing) * 10);
   }
-  .pt-0 {
-    padding-top: calc(var(--spacing) * 0);
-  }
-  .pt-10 {
-    padding-top: calc(var(--spacing) * 10);
-  }
   .pt-20 {
     padding-top: calc(var(--spacing) * 20);
   }
   .pt-25 {
     padding-top: calc(var(--spacing) * 25);
-  }
-  .pt-30 {
-    padding-top: calc(var(--spacing) * 30);
   }
   .pt-40 {
     padding-top: calc(var(--spacing) * 40);
@@ -622,17 +578,8 @@
   .pt-50 {
     padding-top: calc(var(--spacing) * 50);
   }
-  .pt-60 {
-    padding-top: calc(var(--spacing) * 60);
-  }
   .pt-80 {
     padding-top: calc(var(--spacing) * 80);
-  }
-  .pt-440 {
-    padding-top: calc(var(--spacing) * 440);
-  }
-  .pb-1 {
-    padding-bottom: calc(var(--spacing) * 1);
   }
   .pb-8 {
     padding-bottom: calc(var(--spacing) * 8);
@@ -712,12 +659,21 @@
   .underline {
     text-decoration-line: underline;
   }
+  .shadow-md {
+    --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
   }
   .transition {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .transition-all {
+    transition-property: all;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
@@ -730,6 +686,26 @@
       @media (hover: hover) {
         color: var(--color-amber-300);
       }
+    }
+  }
+  .hover\:text-amber-500 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-amber-500);
+      }
+    }
+  }
+  .hover\:opacity-80 {
+    &:hover {
+      @media (hover: hover) {
+        opacity: 80%;
+      }
+    }
+  }
+  .focus\:outline-none {
+    &:focus {
+      --tw-outline-style: none;
+      outline-style: none;
     }
   }
   .sm\:text-\[\#252B42\] {
@@ -770,6 +746,11 @@
   .lg\:mt-100 {
     @media (width >= 64rem) {
       margin-top: calc(var(--spacing) * 100);
+    }
+  }
+  .lg\:ml-4 {
+    @media (width >= 64rem) {
+      margin-left: calc(var(--spacing) * 4);
     }
   }
   .lg\:ml-4\.5 {
@@ -852,6 +833,11 @@
       flex-direction: row;
     }
   }
+  .lg\:justify-around {
+    @media (width >= 64rem) {
+      justify-content: space-around;
+    }
+  }
   .lg\:justify-between {
     @media (width >= 64rem) {
       justify-content: space-between;
@@ -882,22 +868,6 @@
       background-color: #FAFAFA;
     }
   }
-  .lg\:bg-black\/20 {
-    @media (width >= 64rem) {
-      background-color: color-mix(in srgb, #000 20%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        background-color: color-mix(in oklab, var(--color-black) 20%, transparent);
-      }
-    }
-  }
-  .lg\:bg-black\/30 {
-    @media (width >= 64rem) {
-      background-color: color-mix(in srgb, #000 30%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        background-color: color-mix(in oklab, var(--color-black) 30%, transparent);
-      }
-    }
-  }
   .lg\:bg-black\/50 {
     @media (width >= 64rem) {
       background-color: color-mix(in srgb, #000 50%, transparent);
@@ -924,11 +894,6 @@
   .lg\:pt-30 {
     @media (width >= 64rem) {
       padding-top: calc(var(--spacing) * 30);
-    }
-  }
-  .lg\:pt-50 {
-    @media (width >= 64rem) {
-      padding-top: calc(var(--spacing) * 50);
     }
   }
   .lg\:pr-22 {
@@ -1008,15 +973,6 @@
   syntax: "*";
   inherits: false;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
-@property --tw-duration {
-  syntax: "*";
-  inherits: false;
-}
 @property --tw-shadow {
   syntax: "*";
   inherits: false;
@@ -1082,6 +1038,15 @@
   inherits: false;
   initial-value: 0 0 #0000;
 }
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -1095,8 +1060,6 @@
       --tw-skew-y: initial;
       --tw-border-style: solid;
       --tw-font-weight: initial;
-      --tw-outline-style: solid;
-      --tw-duration: initial;
       --tw-shadow: 0 0 #0000;
       --tw-shadow-color: initial;
       --tw-shadow-alpha: 100%;
@@ -1111,6 +1074,8 @@
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-outline-style: solid;
+      --tw-duration: initial;
     }
   }
 }
